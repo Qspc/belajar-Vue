@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+    <title>belajar Vue</title>
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img v-bind:src="gambar" alt="gambar" width="250px" />
+      <p>
+        <button @click="handleClick">ditekan</button>
+      </p>
+
+      <h1>{{ bilangan+10 }}</h1>
+      <p>bilangan ini adalah bilangan {{ isGanjil }}</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, illum?</p>
+
+      <footer id="copyright">
+        <p>copyright 2019</p>
+      </footer>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    // const member = {
+    //   name: 'hari',
+    //   pesan: 'Accept',
+    // };
+    // const app = Vue({
+    //   el: '#app',
+    //   data: member,
+    // });
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: 'hari',
+        pesan: 'Accept',
+        bilangan: 5,
+        gambar: 'react.png',
+      },
+      methods: {
+        getName: function () {
+          return 'hallo, ' + this.name;
+        },
+        ubahNama: function (namaBaru) {
+          this.name = namaBaru;
+          return this.getName();
+        },
+        handleClick: function () {
+          this.bilangan++;
+          this.gambar = 'shopee.png';
+        },
+      },
+      computed: {
+        isGanjil: function () {
+          return this.bilangan % 2 === 0 ? 'genap' : 'ganjil';
+        },
+      },
+    });
+  </script>
+</html>
