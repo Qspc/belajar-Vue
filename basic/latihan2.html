@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan 2</title>
+  </head>
+  <body>
+    <div id="app">
+      <header-component></header-component>
+      <main>
+        <h3>Nama Hewan</h3>
+        <input type="text" name="" id="" />
+      </main>
+      <footer-component></footer-component>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    Vue.component('header-component', {
+      template: `      
+        <header>
+            <img src="react.png" alt="" style="width: 100px" />
+            <h1>{{ pesan }}</h1>
+        </header>`,
+      data: function () {
+        return {
+          pesan: 'hallo dunia!',
+        };
+      },
+    });
+    Vue.component('footer-component', {
+      template: `      
+        <footer>
+            <p>copyright 2019</p>
+        </footer>`,
+    });
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: 'hari',
+        pesan: 'Accept',
+        bilangan: 5,
+        gambar: 'react.png',
+        menu: 'home',
+        kelas: ['lab1', 'lab2', 'lab3'],
+      },
+      methods: {
+        getName: function () {
+          return 'hallo, ' + this.name;
+        },
+      },
+      computed: {
+        isGanjil: function () {
+          return this.bilangan % 2 === 0 ? 'genap' : 'ganjil';
+        },
+      },
+    });
+  </script>
+</html>

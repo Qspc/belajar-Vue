@@ -23,7 +23,13 @@ dokumentasi bisa di cek : https://v3.vuejs.org/api/directives.html#v-text
 event ini yaitu berbagai kejadian yg terjadi pada sistem. ex:click
 
 ## aktivasi class
+
 cara aktifkan kelas dengan menggunakan class binding dengan variabel true dan false (mirip2 hover)
 
 ## two way binding data
+
 membuat binding data secara dua arah. seperti untuk input formulir, text area dan area input lainnya
+
+## Component
+
+struktur HTML yg dipanggil seperti fungsi. dari kumpulan2 component2 ini nantinya dapat terbentuk website
