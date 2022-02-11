@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import Footer from './components/Footer.vue';
-import Category from './components/Category.vue';
+import HelloWorld from "./components/HelloWorld.vue";
+import Footer from "./components/Footer.vue";
+import Category from "./components/Category.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
     Footer,

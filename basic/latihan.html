@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
     <title>belajar Vue</title>
     <style>
       body {
-        font-family: 'Quicksand', sans-serif;
+        font-family: "Quicksand", sans-serif;
       }
       .active {
         background-color: aqua;
@@ -35,22 +38,46 @@
       <li v-else>kelas tidak tersedia.</li>
 
       <div>
-        <label for=""> <input type="checkbox" value="tab1" v-model="kelas" />tab1</label>
-        <label for=""> <input type="checkbox" value="tab2" v-model="kelas" />tab2</label>
-        <label for=""> <input type="checkbox" value="tab3" v-model="kelas" />tab3</label>
+        <label for="">
+          <input type="checkbox" value="tab1" v-model="kelas" />tab1</label
+        >
+        <label for="">
+          <input type="checkbox" value="tab2" v-model="kelas" />tab2</label
+        >
+        <label for="">
+          <input type="checkbox" value="tab3" v-model="kelas" />tab3</label
+        >
       </div>
 
       <h1>{{ bilangan+10 }}</h1>
       <p>bilangan ini adalah bilangan {{ isGanjil }}</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, illum?</p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis,
+        illum?
+      </p>
 
       <footer id="copyright">
         <p>copyright 2019</p>
       </footer>
 
-      <a href="#" v-bind:class="{active: menu === 'home'}" v-on:click="gantiMenu('home', $event)">Home</a>
-      <a href="#" v-bind:class="{active: menu === 'about'}" v-on:click="gantiMenu('about', $event)">ABout</a>
-      <a href="#" v-bind:class="{active: menu === 'blog'}" v-on:click="gantiMenu('blog', $event)">Blog</a>
+      <a
+        href="#"
+        v-bind:class="{active: menu === 'home'}"
+        v-on:click="gantiMenu('home', $event)"
+        >Home</a
+      >
+      <a
+        href="#"
+        v-bind:class="{active: menu === 'about'}"
+        v-on:click="gantiMenu('about', $event)"
+        >ABout</a
+      >
+      <a
+        href="#"
+        v-bind:class="{active: menu === 'blog'}"
+        v-on:click="gantiMenu('blog', $event)"
+        >Blog</a
+      >
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
@@ -64,18 +91,18 @@
     //   data: member,
     // });
     const vm = new Vue({
-      el: '#app',
+      el: "#app",
       data: {
-        name: 'hari',
-        pesan: 'Accept',
+        name: "hari",
+        pesan: "Accept",
         bilangan: 5,
-        gambar: 'react.png',
-        menu: 'home',
-        kelas: ['lab1', 'lab2', 'lab3'],
+        gambar: "react.png",
+        menu: "home",
+        kelas: ["lab1", "lab2", "lab3"],
       },
       methods: {
         getName: function () {
-          return 'hallo, ' + this.name;
+          return "hallo, " + this.name;
         },
         ubahNama: function (namaBaru) {
           this.name = namaBaru;
@@ -83,7 +110,7 @@
         },
         handleClick: function () {
           this.bilangan++;
-          this.gambar = 'shopee.png';
+          this.gambar = "shopee.png";
         },
         gantiMenu: function (menu) {
           event.preventDefault();
@@ -92,7 +119,7 @@
       },
       computed: {
         isGanjil: function () {
-          return this.bilangan % 2 === 0 ? 'genap' : 'ganjil';
+          return this.bilangan % 2 === 0 ? "genap" : "ganjil";
         },
       },
     });

@@ -1,35 +1,31 @@
-#belajar Vue JS
+# Quasar App (app-quasar)
 
-- berisi berbagai komponen - komponen kecil dan berbentuk sebuah website
+A Quasar Framework app
 
-* KEY el = menentukan elemen mana yg akan dijadikan vue nya (wadah dari komponen)
-* bisa langsung nulis beberapa metod dalam kurung kurawal
+## Install the dependencies
+```bash
+npm install
+```
 
-isi komponen ada :
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
 
-- elemen =
-- data = variabel2 yg dibutuhkan (string, integer, boolean dll)
-- method = berisi berbagai perintah seperti function dll
-- computed = sejenis fungsi yang bisa menyesuaikan nilai variabelnya seusai dengan kebutuhan. ex: perjumlahan
-- binding = atribut untuk mengikat gambar agar bisa dimanipulasi
+### Lint the files
+```bash
+npm run lint
+```
 
-## directive
+### Format the files
+```bash
+npm run format
+```
 
-fungsi2 yg disediakan vue js. contoh : v-once, membuat data tidak bisa diubah/update
-dokumentasi bisa di cek : https://v3.vuejs.org/api/directives.html#v-text
+### Build the app for production
+```bash
+quasar build
+```
 
-## event
-
-event ini yaitu berbagai kejadian yg terjadi pada sistem. ex:click
-
-## aktivasi class
-
-cara aktifkan kelas dengan menggunakan class binding dengan variabel true dan false (mirip2 hover)
-
-## two way binding data
-
-membuat binding data secara dua arah. seperti untuk input formulir, text area dan area input lainnya
-
-## Component
-
-struktur HTML yg dipanggil seperti fungsi. dari kumpulan2 component2 ini nantinya dapat terbentuk website
+### Customize the configuration
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).

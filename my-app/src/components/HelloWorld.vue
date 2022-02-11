@@ -4,18 +4,35 @@
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
+        >vue-cli documentation</a
+      >.
     </p>
 
-    <a href="#" v-bind:class="{ active: menu === 'home' }" v-on:click="gantiMenu('home', $event)">Home</a>
-    <a href="#" v-bind:class="{ active: menu === 'about' }" v-on:click="gantiMenu('about', $event)">ABout</a>
-    <a href="#" v-bind:class="{ active: menu === 'blog' }" v-on:click="gantiMenu('blog', $event)">Blog</a>
+    <a
+      href="#"
+      v-bind:class="{ active: menu === 'home' }"
+      v-on:click="gantiMenu('home', $event)"
+      >Home</a
+    >
+    <a
+      href="#"
+      v-bind:class="{ active: menu === 'about' }"
+      v-on:click="gantiMenu('about', $event)"
+      >ABout</a
+    >
+    <a
+      href="#"
+      v-bind:class="{ active: menu === 'blog' }"
+      v-on:click="gantiMenu('blog', $event)"
+      >Blog</a
+    >
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String,
   },
