@@ -2,14 +2,41 @@
   <q-page class="flex flex-center">
     <q-card dark bordered class="bg-grey-9 my-card">
       <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
+        <div class="text-h4">To do List</div>
       </q-card-section>
 
       <q-separator dark inset />
 
       <q-card-section>
-        {{ lorem }}
+        <div class="row justify-center">
+          <div class="col-12">
+            <q-input v-model="todoTask" label="standard" style="color: white">
+              <template v-slot:after>
+                <q-btn
+                  round
+                  dense
+                  flat
+                  icon="send"
+                  @click="addItem"
+                /> </template
+            ></q-input>
+          </div>
+        </div>
+      </q-card-section>
+
+      <q-card-section>
+        <div
+          class="row justify-center"
+          v-for="(item, index) in todoList"
+          :key="index"
+        >
+          <div class="col-8 q-py-md">
+            {{ item.value }}
+          </div>
+          <div class="col-auto q-py-md">
+            <q-btn round dense flat icon="done" @click="removeItem(index)" />
+          </div>
+        </div>
       </q-card-section>
     </q-card>
   </q-page>
@@ -20,11 +47,19 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "PageIndex",
-  setup() {
+  data() {
     return {
-      lorem:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      todoTask: "",
+      todoList: [{ value: "Create an App" }, { value: "build a database" }],
     };
+  },
+  methods: {
+    addItem() {
+      this.todoList.push({ value: this.todoTask });
+    },
+    removeItem(index) {
+      this.todoList.splice(index, 1);
+    },
   },
 });
 </script>
