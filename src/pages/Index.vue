@@ -1,5 +1,6 @@
 <template>
   <q-page class="flex flex-center">
+    <!-- dropdown data
     <q-card dark bordered class="bg-grey-9 my-card">
       <q-card-section>
         <div class="text-h4">To do List</div>
@@ -23,7 +24,6 @@
           </div>
         </div>
       </q-card-section>
-
       <q-card-section>
         <div
           class="row justify-center"
@@ -38,7 +38,68 @@
           </div>
         </div>
       </q-card-section>
-    </q-card>
+    </q-card> -->
+    <div class="inline-block">
+      <div>
+        <q-btn
+          glossy
+          icon-right="mail"
+          color="primary"
+          text-color="black"
+          label="E-mail"
+        />
+      </div>
+      <div class="q-py-md">
+        <q-btn round color="green" icon="my_location" />
+      </div>
+      <div class="q-py-md">
+        <q-btn round>
+          <q-avatar size="50px">
+            <img src="~assets/logo.png" alt="" />
+          </q-avatar>
+        </q-btn>
+      </div>
+      <div class="q-py-md">
+        <q-btn
+          align="between"
+          style="width: 200px"
+          class="btn-fixed-width"
+          color="accent"
+          label="Align between"
+          icon="flight_takeoff"
+        />
+      </div>
+      <div class="q-py-md">
+        <q-btn-group push>
+          <q-btn push label="First" icon="timeline" />
+          <q-btn push label="Second" icon="visibility" />
+          <q-btn push label="Third" icon="update" />
+        </q-btn-group>
+      </div>
+      <div class="q-py-md">
+        <q-btn-dropdown color="primary" label="Dropdown Button">
+          <q-list>
+            <q-item clickable v-close-popup @click="onItemClick">
+              <q-item-section>
+                <q-item-label>Photos</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="onItemClick">
+              <q-item-section>
+                <q-item-label>Videos</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="onItemClick">
+              <q-item-section>
+                <q-item-label>Articles</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+      </div>
+    </div>
   </q-page>
 </template>
 
