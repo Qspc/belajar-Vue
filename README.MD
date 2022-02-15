@@ -58,3 +58,6 @@ template: '<button v-on:click="count++">You clicked me {{ count }} times.</butto
 </div>
 
 new Vue({ el: '#components-demo' })
+
+# Props
+custom atribut yg bisa didaftarkan pada component
