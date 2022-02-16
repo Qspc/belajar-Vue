@@ -43,6 +43,8 @@ objek yg digunakan pada vue.js. bentuk objeknya bisa berbeda-beda. bisa integer,
 
 # component
 
+component kalo di laravel mirip2 partial. cara motong2 setiap bagian biar bisa dipisah2. kaya navbar, sidebar, container, footer dll
+
 // contoh bentuk component
 Vue.component('button-counter', {
 data: function () {
@@ -60,4 +62,5 @@ template: '<button v-on:click="count++">You clicked me {{ count }} times.</butto
 new Vue({ el: '#components-demo' })
 
 # Props
+
 custom atribut yg bisa didaftarkan pada component

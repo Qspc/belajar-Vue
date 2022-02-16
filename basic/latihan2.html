@@ -8,10 +8,14 @@
   </head>
   <body>
     <div id="app">
-      <header-component></header-component>
+      <header-component nama="dodi"></header-component>
       <main>
-        <h3>Nama Hewan</h3>
-        <input type="text" name="" id="" />
+        <kelas
+          v-bind:items="kelas"
+          v-bind:angka="bilangan"
+          v-on:hapuskelas="deletekelas"
+        ></kelas>
+        <home></home>
       </main>
       <footer-component></footer-component>
     </div>
@@ -19,11 +23,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <script>
+    const Home = {
+      template: `
+        <header>
+            <h3>Nama nabi</h3>
+        </header>`,
+    };
+
     Vue.component("header-component", {
-      template: `      
+      props: ["nama"],
+      template: `
         <header>
             <img src="react.png" alt="" style="width: 100px" />
-            <h1>{{ pesan }}</h1>
+            <h1>{{ pesan + ' ' + nama }}</h1>
         </header>`,
       data: function () {
         return {
@@ -31,8 +43,21 @@
         };
       },
     });
+    Vue.component("kelas", {
+      props: ["items", "angka"],
+      template: `
+        <header>
+            <h3>banyak lab : {{ angka }}</h3>
+            <ul>
+              <li v-for="(item, index) in items">{{ index +1 }} - {{ item }}
+                  <a href="" v-on:click.prevent="$emit('hapuskelas', index)">hapus</a>
+                </li>
+
+            </ul>
+        </header>`,
+    });
     Vue.component("footer-component", {
-      template: `      
+      template: `
         <footer>
             <p>copyright 2019</p>
         </footer>`,
@@ -40,6 +65,9 @@
 
     const vm = new Vue({
       el: "#app",
+      components: {
+        home: Home,
+      },
       data: {
         name: "hari",
         pesan: "Accept",
@@ -51,6 +79,9 @@
       methods: {
         getName: function () {
           return "hallo, " + this.name;
+        },
+        deletekelas: function (index) {
+          this.kelas.splice(index, 1);
         },
       },
       computed: {
