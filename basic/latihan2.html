@@ -9,19 +9,30 @@
   <body>
     <div id="app">
       <header-component nama="dodi"></header-component>
+      <!--
+      <nav>
+        <router-link to="/">home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/kelas">Kelas</router-link>
+      </nav> -->
       <main>
         <kelas
           v-bind:items="kelas"
           v-bind:angka="bilangan"
           v-on:hapuskelas="deletekelas"
+          v-on:submitkelas="submitkelas($event)"
         ></kelas>
         <home></home>
       </main>
       <footer-component></footer-component>
+      <router-view></router-view>
     </div>
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <!-- <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
+  <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+
   <script>
     const Home = {
       template: `
@@ -29,6 +40,21 @@
             <h3>Nama nabi</h3>
         </header>`,
     };
+    const About = {
+      template: `
+        <header>
+            <h3>Nama kisah</h3>
+        </header>`,
+    };
+    const Kelas = {};
+    // const router = new VueRouter({
+    //   routes,
+    // });
+    const routes = [
+      { path: "/", component: Home },
+      { path: "/about", component: About },
+      { path: "/kelas", component: Kelas },
+    ];
 
     Vue.component("header-component", {
       props: ["nama"],
@@ -43,18 +69,57 @@
         };
       },
     });
+
     Vue.component("kelas", {
-      props: ["items", "angka"],
+      props: ["items"],
       template: `
         <header>
-            <h3>banyak lab : {{ angka }}</h3>
+          <form v-on:submit.prevent="submitkelas">
+            <input type="text" required v-model="kelas.judul" placeholder="nama lab" />
+            <br />
+            <img :src="previewImage" v-if="previewImage" style="width: 100px"/> <br />
+            <label for="">masukan gambar</label> <br />
+            <input required ref="gambar" v-on:change="upload" type="file" />
+            <br />
+            <br />
+            <button type="submit" style="width: 100px; height: 25px; background-color: aqua">submit</button>
+          </form>
             <ul>
               <li v-for="(item, index) in items">{{ index +1 }} - {{ item }}
                   <a href="" v-on:click.prevent="$emit('hapuskelas', index)">hapus</a>
-                </li>
-
+              </li>
             </ul>
         </header>`,
+      data: function () {
+        return {
+          kelas: {
+            judul: "",
+            gambar: "",
+          },
+          previewImage: "",
+        };
+      },
+      methods: {
+        submitkelas: function () {
+          const data = {
+            id: uuidv4(),
+            judul: this.kelas.judul,
+            gambar: this.kelas.gambar,
+          };
+          console.log(data);
+          this.$emit("submitkelas", data);
+          this.kelas.judul = "";
+          this.kelas.gambar = "";
+          this.previewImage = "";
+          this.$refs.gambar.value = "";
+        },
+        upload: function (event) {
+          console.log(event.target.files[0].name);
+          const namagambar = event.target.files[0].name;
+          this.kelas.gambar = namagambar;
+          this.previewImage = URL.createObjectURL(event.target.files[0]);
+        },
+      },
     });
     Vue.component("footer-component", {
       template: `
@@ -74,14 +139,18 @@
         bilangan: 5,
         gambar: "react.png",
         menu: "home",
-        kelas: ["lab1", "lab2", "lab3"],
+        kelas: [{ id: 1, judul: "lab1", gambar: "react.png" }],
       },
       methods: {
         getName: function () {
           return "hallo, " + this.name;
         },
-        deletekelas: function (index) {
-          this.kelas.splice(index, 1);
+        deletekelas: function (id) {
+          this.kelas = this.kelas.filter((item) => item.id != id);
+        },
+        submitkelas: function (data) {
+          this.kelas.push(data);
+          localStorage.setItem("kelas", JSON.stringify(this.kelas));
         },
       },
       computed: {

@@ -21,6 +21,7 @@
 ## v-on
 
 - v-on:click = bikin fungsi after di klik bakal apa (disimpen di method)
+- v-on:change = membuat perubahan pada form upload gambar
 - v-on:submit.prevent = tidak akan memuat halaman
 - v-on:keyup.enter = berfungsi saat pencet enter
 - Vue.config.keyCodes.f1 = berfungsi saat tekan f1
@@ -43,17 +44,17 @@ objek yg digunakan pada vue.js. bentuk objeknya bisa berbeda-beda. bisa integer,
 
 # component
 
-component kalo di laravel mirip2 partial. cara motong2 setiap bagian biar bisa dipisah2. kaya navbar, sidebar, container, footer dll
-
-// contoh bentuk component
-Vue.component('button-counter', {
-data: function () {
-return {
-count: 0
-}
-},
-template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+- component kalo di laravel mirip2 partial. cara motong2 setiap bagian biar bisa dipisah2. kaya navbar, sidebar, container, footer dll
+- untuk menambahkan konten/tulisan pada tag component nya maka tambahkan tag <slot> di bagian component nya
+  // contoh bentuk component
+  Vue.component('button-counter', {
+  data: function () {
+  return {
+  count: 0
+  }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  })
 
 <div id="components-demo">
   <button-counter></button-counter>
