@@ -1,0 +1,64 @@
+- q-avatar = icon2 kaya rambu, sekolah, mobil dll
+- q-badge = notifikasi pesan, catatan versi apl dll
+- q-banner = popup tanda pesan terkirim, terjadi error, data harus diisi dll
+- q-bar = navbar pada popup menu gitu, yg pojok kanan atas ada 3 icon (restore, minimize exit)
+- q-breadcrumbs = navbar versi lengkap
+- q-btn-group = button yg banyak
+- q-btn-dropdown = button dropdown, biasanya ada di navbar
+- q-card = yaa card
+- q-carousel = halaman jumbotron yg bisa swipe2, untuk swipe nya pakai q-carousel-slide
+- q-chat-message = tampilan chat kaya wa dll
+- q-chip = gabungan icon dan judul, biasanya di navbar
+- q-circular-progress = bikin diagram chart lingkaran
+- q-dialog = card dengan popup penjelasan
+- q-editor = form tulisan editor buat blog dll
+- q-expansion-item = icon dropdown yg biasanya di navbar
+- q-fab = button yg munculin popup keren, buat popup nya pake q-fab-action
+
+- q-input = input tempat pertanyaan
+- q-select =  form dropdown milih opsi
+- q-file = form submit file
+- q-radio = cheklist cuma bisa jawab satu
+- q-checkbox = cheklist >1
+- q-toggle = on/off geser
+- q-btn-toggle = button group cuma bentuk toogle
+- q-slider = bar parameter
+- q-time = jam manual edit
+- q-date = kalender edit manual
+- q-icon = mirip q-badge gitu dah\
+
+- q-inner-loading = animasi loading
+- q-item-section = pop up transisi setiap dimunculin
+- q-knob = bar lingkaran auto edit
+- q-list = buat bikin sidebar
+- q-markup-table = buat bikin tabel
+- q-menu = dropdown cuma harus di klik
+
+- q-pagination = page2 selanjutnya
+- q-parallax = efek parallax (gambar 3d)
+- q-popup-edit = popup edit langsung
+- q-popup-proxy = popup tanda error
+- q-rating = bar rating dengan icon
+- q-responsive = dibikin responsive
+- q-scroll-area = bikin fitur scroll
+- q-item-section = tampilan loading
+- q-space = buat tulisan ada di awal + akhir
+- q-spinner = icon2 animasi yg hidup
+- q-splitter = bagi halaman menjadi dua bagian
+- q-step = animasi langkah2 step
+- q-tab = navbar
+- q-toolbar = navbar 2.0
+- q-tooltip = popup tulisan muncul pas di hover
+- q-tree = minimize tulisan satu pohon
+- q-uploader = tempat submit file/gambar dll
+- q-video = pemutar video
+
+- v-close-popup = untuk menutup popup pada dropdown dll, disimpen pada q-item
+- v-intersection = buat setting tampilan dari navbar saat di scroll
+- v-ripple = efek pas kita klik
+- v-mutation = drag & drop blok gitu
+- v-morph = efek animasi supaya pindah2
+- v-touch-pan = menghitung koordinat mouse. ditulis pada tag lain (biasanya q-card)
+- @click="$q.fullscreen.toggle() = untuk bikin fullscreen
+- @click="showLoading" = efek loading juga
+- @click="showNotif" = notif popup validasi tanda berhasil/error

@@ -1,3 +1,5 @@
+// import Index from "pages/Index.vue";
+
 const routes = [
   {
     path: "/",

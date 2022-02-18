@@ -1,5 +1,13 @@
 <template>
-  <q-page class="flex flex-center"> </q-page>
+  <q-page class="flex flex-center">
+    <q-uploader
+      url="http://localhost:4444/upload"
+      color="teal"
+      flat
+      bordered
+      style="max-width: 300px"
+    />
+  </q-page>
 </template>
 
 <script>
@@ -7,6 +15,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "PageIndex",
+
   data() {
     return {
       todoTask: "",
