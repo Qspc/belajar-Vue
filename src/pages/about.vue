@@ -1,12 +1,13 @@
 <template>
   <q-page class="flex flex-center">
-    <q-uploader
-      url="http://localhost:4444/upload"
-      color="teal"
-      flat
-      bordered
-      style="max-width: 300px"
-    />
+    <div class="q-pa-md row justify-center">
+      <div style="width: 100%; width: 400px">
+        <q-chat-message name="me" :text="['aserunt quibusdam']" sent />
+        <q-chat-message class="q-mr-xl" name="Jane" :text="['Lorem ipsum,']" />
+        <q-chat-message name="me" :text="['arum eni quibusdam']" sent />
+        <q-chat-message name="me" :text="['arum t quibusdam']" sent />
+      </div>
+    </div>
   </q-page>
 </template>
 

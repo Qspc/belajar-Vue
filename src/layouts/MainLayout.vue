@@ -30,9 +30,6 @@
     </q-drawer>
 
     <q-footer elevated>
-      <!-- <q-toolbar>
-        <q-toolbar-title>Footer</q-toolbar-title>
-      </q-toolbar> -->
       <q-tabs>
         <q-tab name="mails" icon="mail" label="mails" />
         <q-tab name="alarms" icon="alarm" label="alarms" />
@@ -52,43 +49,43 @@ import EssentialLink from "components/EssentialLink.vue";
 const linksList = [
   {
     title: "Hihi",
-    // caption: "quasar.dev",
+    caption: "quasar.dev",
     icon: "list",
     link: "/",
   },
   {
     title: "Home",
-    // caption: "github.com/quasarframework",
+    caption: "github.com/quasarframework",
     icon: "home",
     link: "/#/home",
   },
   {
     title: "About",
-    // caption: "chat.quasar.dev",
+    caption: "chat.quasar.dev",
     icon: "chat",
     link: "/#/about",
   },
   {
     title: "Forum",
-    // caption: "forum.quasar.dev",
+    caption: "forum.quasar.dev",
     icon: "record_voice_over",
     link: "https://forum.quasar.dev",
   },
   {
     title: "Twitter",
-    // caption: "@quasarframework",
+    caption: "@quasarframework",
     icon: "rss_feed",
     link: "https://twitter.quasar.dev",
   },
   {
     title: "Facebook",
-    // caption: "@QuasarFramework",
+    caption: "@QuasarFramework",
     icon: "public",
     link: "https://facebook.quasar.dev",
   },
   {
     title: "Quasar Awesome",
-    // caption: "Community Quasar projects",
+    caption: "Community Quasar projects",
     icon: "favorite",
     link: "https://awesome.quasar.dev",
   },

@@ -65,3 +65,25 @@ new Vue({ el: '#components-demo' })
 # Props
 
 custom atribut yg bisa didaftarkan pada component
+
+## alur component di quasar
+
+- ada dua file utama : index.html dan app.vue. index.html untuk root dari struktur html nya dan app.vue sebagai awal dari semua component yg dipakai
+- lalu ada router.js sebagai pusat dari semua link yang dipakai pada websiter kita. isinya ada dua :
+  1. root, komponen yg selalu muncul di semua tampilan. ex : navbar, sidebar dll
+  2. child, komponen yg berbeda-beda saat masuk ke link lain. ex : main page
+- selanjutnya terdapat 5 folder yang dipakai (setidaknya untuk sekarang) :
+  1. assets, sebagai tempat penyimpanan aset & gambar2 yg bakal dipakai
+  2. boot, kurang tau fungsinya buat apa
+  3. css, sebagai root untuk semua komponen css yang akan dipasang
+  4. layout, sebagai komponen root pada routes. ya contohnya kaya tempat bikin sidebar dll
+  5. pages, berbagai file yg sesuai dengan folder yg dipilih masing2
+-
+
+index.html -> id nya q-app
+app.vue -> namanya app & tag <router-view />
+layout isinya :
+header
+drawer -> import dari file component juga (yang essential)
+footer
+page layout -> isinya tag <router-view />

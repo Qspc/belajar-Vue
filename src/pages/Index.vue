@@ -1,105 +1,10 @@
 <template>
   <q-page class="flex flex-center">
-    <!-- dropdown data
-    <q-card dark bordered class="bg-grey-9 my-card">
-      <q-card-section>
-        <div class="text-h4">To do List</div>
-      </q-card-section>
-
-      <q-separator dark inset />
-
-      <q-card-section>
-        <div class="row justify-center">
-          <div class="col-12">
-            <q-input v-model="todoTask" label="standard" style="color: white">
-              <template v-slot:after>
-                <q-btn
-                  round
-                  dense
-                  flat
-                  icon="send"
-                  @click="addItem"
-                /> </template
-            ></q-input>
-          </div>
-        </div>
-      </q-card-section>
-      <q-card-section>
-        <div
-          class="row justify-center"
-          v-for="(item, index) in todoList"
-          :key="index"
-        >
-          <div class="col-8 q-py-md">
-            {{ item.value }}
-          </div>
-          <div class="col-auto q-py-md">
-            <q-btn round dense flat icon="done" @click="removeItem(index)" />
-          </div>
-        </div>
-      </q-card-section>
-    </q-card> -->
-    <div class="inline-block">
-      <div>
-        <q-btn
-          glossy
-          icon-right="mail"
-          color="primary"
-          text-color="black"
-          label="E-mail"
-        />
-      </div>
-      <div class="q-py-md">
-        <q-btn round color="green" icon="my_location" />
-      </div>
-      <div class="q-py-md">
-        <q-btn round>
-          <q-avatar size="50px">
-            <img src="~assets/logo.png" alt="" />
-          </q-avatar>
-        </q-btn>
-      </div>
-      <div class="q-py-md">
-        <q-btn
-          align="between"
-          style="width: 200px"
-          class="btn-fixed-width"
-          color="accent"
-          label="Align between"
-          icon="flight_takeoff"
-        />
-      </div>
-      <div class="q-py-md">
-        <q-btn-group push>
-          <q-btn push label="First" icon="timeline" />
-          <q-btn push label="Second" icon="visibility" />
-          <q-btn push label="Third" icon="update" />
-        </q-btn-group>
-      </div>
-      <div class="q-py-md">
-        <q-btn-dropdown color="primary" label="Dropdown Button">
-          <q-list>
-            <q-item clickable v-close-popup @click="onItemClick">
-              <q-item-section>
-                <q-item-label>Photos</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup @click="onItemClick">
-              <q-item-section>
-                <q-item-label>Videos</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup @click="onItemClick">
-              <q-item-section>
-                <q-item-label>Articles</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
-      </div>
-    </div>
+    <header :nama="dodi">
+      <img src="react.png" alt="" style="width: 100px" />
+      <h1>{{ pesan }}</h1>
+      <h1>{{ nama }}</h1>
+    </header>
   </q-page>
 </template>
 
@@ -108,21 +13,28 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "PageIndex",
+  props: ["nama"],
   data() {
     return {
-      todoTask: "",
-      todoList: [{ value: "Create an App" }, { value: "build a database" }],
+      pesan: "hallo dunia!",
     };
   },
-  methods: {
-    addItem() {
-      this.todoList.push({ value: this.todoTask });
-    },
-    removeItem(index) {
-      this.todoList.splice(index, 1);
-    },
-  },
+  methods: {},
 });
+
+// Vue.component("header-component", {
+//   props: ["nama"],
+//   template: `
+//         <header>
+//             <img src="react.png" alt="" style="width: 100px" />
+//             <h1>{{ pesan + ' ' + nama }}</h1>
+//         </header>`,
+//   data: function () {
+//     return {
+//       pesan: "hallo dunia!",
+//     };
+//   },
+// });
 </script>
 
 <style lang="sass" scoped>

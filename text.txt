@@ -1,3 +1,6 @@
+- q-drawer = membuat komponen matriks 3x3
+
+
 - q-avatar = icon2 kaya rambu, sekolah, mobil dll
 - q-badge = notifikasi pesan, catatan versi apl dll
 - q-banner = popup tanda pesan terkirim, terjadi error, data harus diisi dll
@@ -62,3 +65,8 @@
 - @click="$q.fullscreen.toggle() = untuk bikin fullscreen
 - @click="showLoading" = efek loading juga
 - @click="showNotif" = notif popup validasi tanda berhasil/error
+
+
+
+ROUTES
+- cara penulisannya ada 2 yaitu lazy-loading dan on-demand loading
