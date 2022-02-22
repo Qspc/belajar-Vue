@@ -1,26 +1,12 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title> Quasar hihi </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+      <NavbarLink />
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
         <q-item-label header> My Project </q-item-label>
-
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -30,11 +16,7 @@
     </q-drawer>
 
     <q-footer elevated>
-      <q-tabs>
-        <q-tab name="mails" icon="mail" label="mails" />
-        <q-tab name="alarms" icon="alarm" label="alarms" />
-        <q-tab name="movies" icon="movie" label="movies" />
-      </q-tabs>
+      <FooterLink />
     </q-footer>
 
     <q-page-container>
@@ -45,13 +27,15 @@
 
 <script>
 import EssentialLink from "components/EssentialLink.vue";
+import FooterLink from "components/FooterLink.vue";
+import NavbarLink from "components/NavbarLink.vue";
 
 const linksList = [
   {
     title: "Hihi",
     caption: "quasar.dev",
     icon: "list",
-    link: "/",
+    link: "/#/",
   },
   {
     title: "Home",
@@ -92,12 +76,15 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from "vue";
+// import Footer from "app/my-app/src/components/Footer.vue";
 
 export default defineComponent({
   name: "MainLayout",
 
   components: {
     EssentialLink,
+    FooterLink,
+    NavbarLink,
   },
 
   setup() {
